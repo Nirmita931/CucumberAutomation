@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Silver View Test Automation" verbose="3">
+    <test name="Login to Admin Portal">
+        <classes>
+            <class name="Runner.DemoRunner"/>
+        </classes>
+    </test>
+</suite>
