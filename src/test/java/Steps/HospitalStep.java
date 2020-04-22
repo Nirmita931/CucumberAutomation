@@ -1,7 +1,6 @@
 package Steps;
 
 import Utility.BaseUtil;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import pages.Hospital;
 

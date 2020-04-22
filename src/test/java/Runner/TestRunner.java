@@ -5,9 +5,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
         monochrome = true,
-        features = {"src/test/resources/DemoFeatures"},
+        features = {"src/test/resources/features/TestLink"},
         glue = "Steps",
-        tags = "@SnfNonPremiumUpdate",
+        tags = "@MessageOfPremiumListingState",
         plugin = {"pretty","json:target/cucumber.json","html:target/cucumber-reports"}
         )
 

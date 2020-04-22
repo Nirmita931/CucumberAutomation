@@ -1,11 +1,8 @@
 package Steps;
 
 import Utility.BaseUtil;
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import pages.ProviderEdit;
-
-import java.util.List;
 
 public class SnfEditPremium extends BaseUtil {
 
@@ -42,11 +39,5 @@ public class SnfEditPremium extends BaseUtil {
     public void iUploadABrochure(String arg0) throws InterruptedException {
         Thread.sleep(3000);
         this.provideredit.BrochureUpload(arg0);
-    }
-
-    @Then("^I enter the special features$")
-    public void iEnterTheSpecialFeatures(DataTable dt) {
-        List<String> list = dt.asList(String.class);
-
     }
 }

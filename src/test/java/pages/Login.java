@@ -14,7 +14,7 @@ public class Login{
     private WebDriverWait wait;
 
     public static String currentUrl = "https://slvsearch-qa.silvervue.com/";
-    public static String PacUrl = "https://qa-pac.silvervue.com/";
+    public static String PacUrl = "https://qa-pac.silvervue.com/login";
 
 
     @FindBy(name= "email") WebElement userName;
@@ -52,22 +52,22 @@ public class Login{
         driver.get(PacUrl);
     }
 
-    public void loginToPac(String pemail, String password){
+    public void loginToPac(String pemail, String password) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(userName));
         userName.sendKeys(pemail);
         passWord.sendKeys(password);
+        PacLoginButton.click();
     }
 
     public void PacLogout() throws InterruptedException {
         Thread.sleep(2000);
-        Actions action = new Actions(driver);
-        WebElement we = driver.findElement(By.xpath("//span[@class='icon-pp-header-genericprofile-33x33']"));
+        PacAccountDropdown.click();
         PacLogout.click();
     }
 
-    public void PacLogin(){
-        PacLoginButton.click();
-    }
+//    public void PacLogin(){
+//        PacLoginButton.click();
+//    }
 
     public void logout(){
         wait.until(ExpectedConditions.visibilityOf(Dropdown));

@@ -29,10 +29,10 @@ public class LoginStep extends BaseUtil {
     }
 
     @Given("^I enter username \"([^\"]*)\" and password \"([^\"]*)\" for PAC Login$")
-    public void iEnterUsernameAndPasswordForPACLogin(String arg0, String arg1) throws ClassNotFoundException {
+    public void iEnterUsernameAndPasswordForPACLogin(String arg0, String arg1) throws ClassNotFoundException, InterruptedException {
        this.log.getPacUrl();
        this.log.loginToPac(arg0, arg1);
-       this.log.PacLogin();
+//       this.log.PacLogin();
     }
 
     @And("^I log out of PAC portal$")

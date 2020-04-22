@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,10 +100,85 @@ public class ProviderEdit {
 //    @FindBy(xpath = "//input[@placeholder='Search providers by name or id...']") WebElement PacFacility;
 //    @FindBy(xpath = "//body//div[@id='layout']//div//div//div//div//a[1]") WebElement ChooseSNF;
 
+    @FindBy(xpath = "//span[@class='icon-pp-leftnav-contactus-30x30']") WebElement contactUs;
+    @FindBy(xpath = "//input[@placeholder='Enter your subject here']") WebElement subject;
+    @FindBy(name = "message") WebElement message;
+    @FindBy(xpath = "//button[contains(text(),'Send')]") WebElement send;
+    @FindBy(xpath = "/div[contains(text(), 'Your Message Was Sent Successfully')]") WebElement contactUsSnackBarMessage;
+
+    // For searching and selecting PAC
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]") WebElement searchPacDropdown;
+    @FindBy(xpath = "//input[@placeholder='Search providers by name or id...']") WebElement searchPacInputBox;
+
+    // Current State of Premium Listing
+    @FindBy(xpath = "//p[contains(text(),'You currently have no premium listings')]") WebElement currentNoPremiumListingMessage;
+    @FindBy(xpath = "//p[contains(text(),'The following information is only visible to patie')]") WebElement currentSomePremiumListingMessage;
+    @FindBy(xpath = "//p[contains(text(),'You have a national listing, so the following info')]") WebElement currentNationalListingMessage;
+
+    //Potential State of Premium Listing
+    @FindBy(xpath = "//div[@id='headerSection']//div//div") WebElement potentialPremiummessage;
+
+
     public ProviderEdit(WebDriver driver, WebDriverWait wait){
         this.driver=driver;
         this.wait = wait;
         PageFactory.initElements(driver,this);
+    }
+    public String checkPotentialPremiumMessage(){
+        String PremiumState = potentialPremiummessage.getText();
+        Assert.assertTrue(potentialPremiummessage.isDisplayed(), PremiumState);
+        System.out.println("Premium listing potential message is : " + PremiumState);
+        return PremiumState;
+    }
+    public String checkCurrentNoPremiumListingMessage(){
+        String noPremiumMessage = currentNoPremiumListingMessage.getText();
+        Assert.assertTrue(currentNoPremiumListingMessage.isDisplayed(), noPremiumMessage);
+        System.out.println("No premium listing message is : " + noPremiumMessage);
+        return noPremiumMessage;
+    }
+    public String checkCurrentSomePremiumListingMessage(){
+        String somePremiumMessage = currentSomePremiumListingMessage.getText();
+        Assert.assertTrue(currentSomePremiumListingMessage.isDisplayed(), somePremiumMessage);
+        System.out.println("Some premium listing message is : " + somePremiumMessage);
+        return somePremiumMessage;
+    }
+    public String checkNationalListingMessage(){
+        String nationalListingMessage = currentNationalListingMessage.getText();
+        Assert.assertTrue(currentNationalListingMessage.isDisplayed(), nationalListingMessage);
+        System.out.println("National listing message is : " + nationalListingMessage);
+        return nationalListingMessage;
+    }
+    public String selectPacDynamic(String svid) {
+        String xpath = String.format("//a[contains(@href,'%s')]", svid);
+        return xpath;
+    }
+    public void selectPac(String name, String svid) throws InterruptedException {
+        searchPacDropdown.click();
+        searchPacInputBox.clear();
+        searchPacInputBox.sendKeys(name);
+        Thread.sleep(1000);
+        String s = selectPacDynamic(svid);
+        WebElement selectPac = driver.findElement(By.xpath(s));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body[s1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]")));
+        selectPac.click();
+        Thread.sleep(4000);
+
+    }
+    public void clickContactUs() throws InterruptedException {
+        Thread.sleep(4000);
+        contactUs.click();
+    }
+    public void contactUsContents(String Subject, String Message){
+        wait.until(ExpectedConditions.visibilityOf(subject));
+        subject.sendKeys(Subject);
+        message.sendKeys(Message);
+    }
+    public String clickSendButton(){
+        send.click();
+        wait.until(ExpectedConditions.visibilityOf(contactUsSnackBarMessage));
+        String confirmationMsg = contactUsSnackBarMessage.getText();
+        Assert.assertTrue(contactUsSnackBarMessage.isDisplayed());
+        return confirmationMsg;
     }
     public void ChooseTransitionalType(String type){
         Select facility_type = new Select(FacilityType);

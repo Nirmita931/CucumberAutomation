@@ -14,7 +14,7 @@ Feature: Practice
     Then I search for the service
       | 1:1 Sitters | HIV/AIDS | AA new service | Bereavement | Music Therapy |
     Then I click on Save Changes button and verify the snackbar message
-    Then I log out of PAC portal
+    Then I log out of the PAC portal
     Examples:
       | ProviderName  |
       | SNF 02 New    |

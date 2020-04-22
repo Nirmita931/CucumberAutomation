@@ -5,6 +5,7 @@ import Utility.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,8 +26,11 @@ public class Hook extends BaseUtil{
     public void setUp() {
         System.out.println("Opening test");
         //Create a new ChromeDriver
-        System.setProperty("webdriver.chrome.driver", "/Users/mac/IdeaProjects/CucumberSelenium/src/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "/Users/mac/IdeaProjects/CucumberSelenium/src/chromedriver");
+
+        ChromeDriverManager.chromedriver().setup();
         base.driver = new ChromeDriver();
+
         base.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         base.wait = new WebDriverWait(base.driver, 15);
     }

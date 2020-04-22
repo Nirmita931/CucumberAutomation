@@ -1,0 +1,506 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 58783397594,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter username \"nirmita931@gmail.com\" and password \"Password1!\" for PAC Login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "nirmita931@gmail.com",
+                  "offset": 18
+                },
+                {
+                  "val": "Password1!",
+                  "offset": 54
+                }
+              ],
+              "location": "LoginStep.iEnterUsernameAndPasswordForPACLogin(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8310489534,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click on User management icon from the left navigation bar",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnUserManagementIconFromTheLeftNavigationBar()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7796942047,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Add new PAC user",
+        "description": "",
+        "id": "pac-user-management;add-new-pac-user",
+        "after": [
+          {
+            "result": {
+              "duration": 282491321,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 214448694,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I click on Add User button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnAddUserButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 909948831,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I enter the following information",
+            "match": {
+              "location": "PACUserManagementStep.iEnterTheFollowingInformation(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "lname",
+                  "e@b.com",
+                  "e@c.com"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5408093773,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I click on Add and Close button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnAddAndCloseButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2179808578,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I log out of PAC portal",
+            "match": {
+              "location": "LoginStep.iLogOutOfPACPortal()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 79873106767,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter username \"nirmita931@gmail.com\" and password \"Password1!\" for PAC Login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "nirmita931@gmail.com",
+                  "offset": 18
+                },
+                {
+                  "val": "Password1!",
+                  "offset": 54
+                }
+              ],
+              "location": "LoginStep.iEnterUsernameAndPasswordForPACLogin(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8205847756,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click on User management icon from the left navigation bar",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnUserManagementIconFromTheLeftNavigationBar()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2682753912,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Edit a PAC User",
+        "description": "",
+        "id": "pac-user-management;edit-a-pac-user",
+        "after": [
+          {
+            "result": {
+              "duration": 234536514,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 776556098,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I click on edit button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnEditButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 868033048,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I edit the user information",
+            "match": {
+              "location": "PACUserManagementStep.iEditTheUserInformation(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "penelope",
+                  "clearWater"
+                ],
+                "line": 18
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5053091222,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I click on Save and Close button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnSaveAndCloseButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2164874765,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I log out of PAC portal",
+            "match": {
+              "location": "LoginStep.iLogOutOfPACPortal()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 16575746973,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter username \"nirmita931@gmail.com\" and password \"Password1!\" for PAC Login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "nirmita931@gmail.com",
+                  "offset": 18
+                },
+                {
+                  "val": "Password1!",
+                  "offset": 54
+                }
+              ],
+              "location": "LoginStep.iEnterUsernameAndPasswordForPACLogin(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8205300129,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click on User management icon from the left navigation bar",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnUserManagementIconFromTheLeftNavigationBar()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2710580175,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setUp()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Resend Invite to a PAC User",
+        "description": "",
+        "id": "pac-user-management;resend-invite-to-a-pac-user",
+        "after": [
+          {
+            "result": {
+              "duration": 205203107,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1047982971,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I click on resend invite button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnResendInviteButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3835851503,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I send the invitation to the user",
+            "match": {
+              "location": "PACUserManagementStep.iSendTheInvitationToTheUser()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2176627178,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I log out of PAC portal",
+            "match": {
+              "location": "LoginStep.iLogOutOfPACPortal()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 146929319603,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter username \"nirmita931@gmail.com\" and password \"Password1!\" for PAC Login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "nirmita931@gmail.com",
+                  "offset": 18
+                },
+                {
+                  "val": "Password1!",
+                  "offset": 54
+                }
+              ],
+              "location": "LoginStep.iEnterUsernameAndPasswordForPACLogin(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8204288817,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click on User management icon from the left navigation bar",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnUserManagementIconFromTheLeftNavigationBar()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2105850281,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setUp()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Delete a PAC User",
+        "description": "",
+        "id": "pac-user-management;delete-a-pac-user",
+        "after": [
+          {
+            "result": {
+              "duration": 316424570,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 816529987,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I click on Delete button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnDeleteButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4390333022,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I click on Yes button",
+            "match": {
+              "location": "PACUserManagementStep.iClickOnYesButton()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2173195393,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "I log out of PAC portal",
+            "match": {
+              "location": "LoginStep.iLogOutOfPACPortal()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "PAC User Management",
+    "description": "",
+    "id": "pac-user-management",
+    "keyword": "Feature",
+    "uri": "PacUserManagement.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@UserManagement"
+      }
+    ]
+  }
+]
